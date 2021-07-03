@@ -1,4 +1,3 @@
-
 <table class="table table-border mt-4 bg-danger">
     <tr style="color: aliceblue;">
         <th>name</th>
@@ -11,7 +10,7 @@
         <th>education</th>
         <th>stream</th>
     </tr>
-    <tr style="color: antiquewhite;"  *ngFor="let user of data">
+    <tr style="color: antiquewhite;" *ngFor="let user of data">
         <td>{{user.name}}</td>
         <td>{{user.age}}</td>
         <td>{{user.company}}</td>
@@ -24,9 +23,11 @@
     </tr>
 </table>
 
-<!-- <img src="{{userprofile}}" alt="image" />--->  <!--Interpolation Binding- -->
+<!-- <img src="{{userprofile}}" alt="image" />--->
+<!--Interpolation Binding- -->
 
-<!-- <img [src]="userprofile1" alt="image" />  ---> <!---Property Binding- -->
+<!-- <img [src]="userprofile1" alt="image" />  --->
+<!---Property Binding- -->
 
 <button [class.jspiders]="isActive">Jspiders</button>
 
@@ -39,28 +40,30 @@
 
 
 <button style=" color:blanchedalmond;   background: red;">Style Binding</button>
-<button style="color: black;"   [style.backgroundColor]="Color ? 'green' : 'red'">Style Binding Angular</button> <!---mouse event binding-->
+<button style="color: black;" [style.backgroundColor]="Color ? 'green' : 'red'">Style Binding Angular</button>
+<!---mouse event binding-->
 
 <button (click)="clickEvent($event)" class="btn btn-success">Event Binding</button>
 
-<input type="text" class="form-control" (keypress)="typeEvent($event)"> <!---keyboard event binding-->
-<input type="text" class="form-control" (keyup.enter)="angularWayTypeEvent($event)" placeholder="please add some text" >
+<input type="text" class="form-control" (keypress)="typeEvent($event)">
+<!---keyboard event binding-->
+<input type="text" class="form-control" (keyup.enter)="angularWayTypeEvent($event)" placeholder="please add some text">
 
-<input type="text"  name="" id="" class="form-control"  #email (keyup.enter)=enterEmail(email.value) >
+<input type="text" name="" id="" class="form-control" #email (keyup.enter)=enterEmail(email.value)>
 <input type="text" name="" id="" class="form-control" (keyup.enter)=checkUsername($event)>
 
 
-<input type="text" [(ngModel)]="username" name="" id="" class="form-control" placeholder="enter your name" >
-<h1>{{username}}    </h1>
+<!-- <input type="text" [(ngModel)]="username" name="" id="" class="form-control" placeholder="enter your name" >
+<h1>{{username}}    </h1> -->
 
 
 <button class="btn btn-block btn-border btn-primary mt-2" (click)="addEmp()">Add Employees</button>
 
 
 <table class="table table-border mt-4 ">
-        <thead class="thead-dark">
+    <thead class="thead-dark">
 
-    <tr style="color: aliceblue;">
+        <tr style="color: aliceblue;">
             <th>index</th>
             <th>empId</th>
             <th>empName</th>
@@ -74,18 +77,17 @@
             <th>Removal</th>
         </tr>
     </thead>
-    
-    
-    
+
+
+
     <!-- [style.backgroundColor]="orange",
     [style.color]="black",
     [style.padding]="10px" -->
     <tbody>
-        <tr style="color: antiquewhite;"  *ngFor="let user of employee; index as i" 
-        [ngStyle]="{'color': user.empCompany==='TestYantra' ? 'red' : 'yellow' , 'padding':'10px', 'background-color' : user.empCompany==='TestYantra' ? 'black' : 'linear-gradient( #3498db, #8e44ad)', border:'5px solid #111'}">
-        
-        
-            
+        <tr style="color: antiquewhite;" *ngFor="let user of employee; index as i" [ngStyle]="{'color': user.empCompany==='TestYantra' ? 'red' : 'yellow' , 'padding':'10px', 'background-color' : user.empCompany==='TestYantra' ? 'black' : 'linear-gradient( #3498db, #8e44ad)', border:'5px solid #111'}">
+
+
+
             <td><span class="badge badge-success">{{i+1}}</span></td>
             <td>{{user.empId}}</td>
             <td>{{user.empName}}</td>
@@ -99,10 +101,10 @@
             <td><button class="btn btn-danger" (click)="removeEmp(user)">Remove</button></td>
         </tr>
     </tbody>
-    </table>
+</table>
 
 
-    <!-- <div class="row">
+<!-- <div class="row">
         <div class="col-md-3" >
             <div class="card" style="width: 18rem;">
                 <img src="..." class="card-img-top" alt="...">
@@ -118,22 +120,22 @@
     </div> -->
 
 
-    <!---Angular 2 -->
-    <div *ngIf="employee.length > 0">
-        Employees are here.
-    </div>
-    <div *ngIf="employee.length == 0">
-        Employees are not here.
-    </div>
+<!---Angular 2 -->
+<div *ngIf="employee.length > 0">
+    Employees are here.
+</div>
+<div *ngIf="employee.length == 0">
+    Employees are not here.
+</div>
 
-    <!-- Angular 4 onwards -->
-    <div *ngIf="employee.length>0; then emp else noemp"></div>
-    <ng-template #emp>
-        <h1 style="color: green;">Employees Are Here</h1>
-    </ng-template>
-    <ng-template #noemp>
-        <h1 style="color: red;">No Employees Here</h1>
-    </ng-template>
+<!-- Angular 4 onwards -->
+<div *ngIf="employee.length>0; then emp else noemp"></div>
+<ng-template #emp>
+    <h1 style="color: green;">Employees Are Here</h1>
+</ng-template>
+<ng-template #noemp>
+    <h1 style="color: red;">No Employees Here</h1>
+</ng-template>
 
 
 <span [ngSwitch]="color">
@@ -148,4 +150,3 @@
             </p>
 
 </span>
-
